@@ -22,4 +22,11 @@ public class WelcomeController {
         mod.addAttribute("todos",list);
         return "welcome";
     }
+
+    @RequestMapping("/welcome1")
+    public String oneUser(ModelMap mod){
+        Student stu = studentRepository.getById(1);
+        mod.addAttribute("name",stu.getName());
+        return "welcome1";
+    }
 }
